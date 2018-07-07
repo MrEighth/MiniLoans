@@ -8,19 +8,25 @@ TODO：业务逻辑图
 
 ## 2.项目结构
 
-| 路径                  | 描述 |
-| :------------------- | ----------- |
-| /README.md           | 项目描述     |
-| /conf                | 全局配置文件|
-| /lib                 | 依赖库       |
-| /logs                | 网站日志     |
-| /routes              | 路由表       |
-| /static              | 资源文件     |
-| /templates           | 模板         |
-| /webapps             | 网络应用层   |
-| /webapps/controllers | 业务逻辑层   |
-| /webapps/models      | 数据模型层   |
-| /webapps/scripts     | 底层         |
+| 路径                 | 描述 |
+| :------------------ | -----------  |
+| /README.md          | 项目描述      |
+| /requirements.txt   | 依赖及版本说明 |
+| /config.py          | Flask配置类   |
+| /manage.py          | 工程启动文件   |
+| /migrations         | 数据迁移      |
+| /tests              | 单元测试模块   |
+| /venv               | 虚拟环境      |
+| /conf               | 全局配置文件   |
+| /lib                | 依赖模块      |
+| /logs               | 网站日志      |
+| /webapps            | 网络应用层    |
+| /webapps/controllers| 业务逻辑层    |
+| /webapps/models     | 数据模型层    |
+| /webapps/scripts    | 底层         |
+| /webapps/templates  | 模板         |
+| /webapps/routes     | 路由表        |
+| /webapps/static     | 资源文件      |
 
 ## 3.网站简明设计
 
