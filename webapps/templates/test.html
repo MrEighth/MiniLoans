@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+    <script type="text/javascript" src="../static/js/jquery.min.js"></script>
+    <title>Welcome</title>
+    <style type="text/css">
+    body {
+      height: 100%;
+      background: black;
+      margin:0;
+      padding:0;
+      display: block;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      -webkit-box-sizing: border-box;
+      padding-bottom: 60%;
+    }
+    .pro_bg{
+      padding:0; 
+      margin-top:0;
+      position: relative;
+    }
+    video {
+          position: relative;
+          margin-top: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 1;
+          /*灰色调*/
+          /*-webkit-filter:grayscale(100%)*/
+      }
+      .pro_content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        bottom: 0;
+        justify-content: space-between;
+        left: 5%;
+        padding: 0 5% 5%;
+        position: absolute;
+        width: 100%;
+        z-index: 2;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .pro_fg {
+          overflow: hidden;
+          background: white;
+          position: relative;
+　　  white-space: nowrap;
+          align-items: center;
+          text-align: center;
+          z-index: 99;
+          height: 100%;
+          margin: 0 2% 2%;
+          padding:0;
+        }
+        .header-content {
+            position: absolute;
+            overflow: hidden;
+            z-index: 99;
+            top: 8%;
+            width: 99%;
+            display: flex;
+            color: white;
+            left: 2%;
+          }
+
+          .header-content .item {
+            display: flex;
+            flex-direction: column;
+            width: 33%;
+            text-align: center;
+            vertical-align: top;
+          }
+
+          .header-content .tab {
+          }
+
+          .title {
+            position: relative;
+            z-index: 99;
+            width: 90%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            height: 10%;
+          }
+           .title a{
+            color: #988;
+            z-index: 99;
+            font-size: 150%;
+            font-weight: bold;
+            margin-top: 2%;
+            margin-left: 10%;
+            display: flex;
+          }
+          .title img {
+            margin-top: 2%;
+            margin-left: 10%;
+            width: 30%;
+            height: 30%;
+          }
+          .money-box {
+  position:relative;
+  width: 90%;
+  overflow: hidden;
+  text-align: center;
+  margin-left: 5%;
+  border-top: 1px solid #d9d9d9;
+  margin-top: 2%;
+  height: 10%;
+  display: flex;
+  bottom: 1%
+}
+
+.money-box div {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  text-align: center;
+  font-size: 110%;
+  color: #888;
+  font-weight: bold;
+}
+.data {
+  width:90%;
+  border-top: 1px solid #d9d9d9;
+  margin-top: 1%;
+  height: 7%;
+  display: -webkit-inline-flex;
+}
+
+.data a {
+  width: 45%;
+  font-size: 100%;
+  padding: 5% 5%;
+}
+
+.data .money {
+  position: relative;
+  margin: 2% 0 0 10%;
+  left: 5%;
+  font-size:100%;
+}
+.data .select {
+  position:relative;
+  padding-top:5%;
+  padding-right:10%;
+  color: #888;
+}
+.ts {
+  margin: 1% 5%;
+  padding-top: 2%;
+  border-top: 1px solid #d9d9d9;
+  display: flex;
+  width: 96%;
+  flex-direction: column;
+  font-size: 100%;
+  color: #66686d;
+}
+
+.ts > p {
+  text-align: left;
+  margin-top: 2rpx;
+  display: block;
+  white-space:pre-wrap;
+}
+ .weui-select {
+    margin: 1% 1%;
+    padding-left: 17%;
+ }
+
+.req {
+  position: fixed;
+  bottom: 0;
+  width:100%;
+}
+
+.fixed_box {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background: #fff;
+    padding-bottom: 10px;
+    z-index: 100;
+    background: #fff;
+    display: none;
+}
+.weui-btn {
+  background-color: black;
+}
+
+    </style>
+</head>
+<body>
+<div class="pro_bg">
+    <!--autoplay用来使其自动播放，muted用来使其静音，loop为循环播放-->
+       <video id="v" autoplay muted loop>
+        <source type="video/mp4" src="https://pmdvod.nationalgeographic.com/NG_Video/682/771/OneStrangeRock_LandLoop_1264507459787_mp4_video_1280x720_1928000_7.mp4">
+      </video>
+      <div class="pro_content">
+      <a class="pro_title">人人生财</a>
+      <a>助你探索精彩人生</a>
+      </div>
+      <div class="header-content">
+      <div class="item"><p class="tab">最高额度</p><p>50000元</p></div>
+      <div class="item"><p class="tab">期限范围</p><p>1-24期</p></div>
+      <div class="item"><p class="tab" >日利率</p><p id="rate">0.83%</p></div>
+      </div>
+</div>
+<div class="pro_fg">
+      
+
+      <div class="title">
+      <!--<view class="line"></view>-->
+      <image src="../static/images/icons/icon_bj2.png" mode="aspectFit"></image>
+      <a>小额贷款说明</a>
+      </div>
+
+      <div class="money-box">
+      <div><a id="m_refund_price">0</a><span>月还款(元)</span></div>
+      <span class="line"></span>
+      <div><a id="total_interest">0</a><span>总利息(元)</span></div>
+     </div>
+
+     <div class="data">
+      <a>金额（元）</a>   
+      <input class="money" type="number" pattern="[0-9]*" placeholder="请输入金额" id="price"/>
+    </div>
+
+    <div class="data">
+      <a>期限（月）</a>
+      <select class="weui-select" id="need_time"><option value="1">1个月</option><option value="2">2个月</option><option value="3">3个月</option><option value="4">4个月</option><option value="5">5个月</option><option value="6">6个月</option><option value="7">7个月</option><option value="8">8个月</option><option value="9">9个月</option><option value="10">10个月</option><option value="11">11个月</option><option value="12">12个月</option><option value="13">13个月</option><option value="14">14个月</option><option value="15">15个月</option><option value="16">16个月</option><option value="17">17个月</option><option value="18">18个月</option><option value="19">19个月</option><option value="20">20个月</option><option value="21">21个月</option><option value="22">22个月</option><option value="23">23个月</option><option value="24">24个月</option></select>
+    </div>
+
+<div class="ts">
+      <p class="ls">产品介绍</p>
+      <p class="ls">借款金额：1000—50000</p>
+      <p class="ls">借款期限：短期：1周-4周；中长期：5月-12月</p>
+      <p class="ls">综合费率：年10%-36%</p>
+      <p class="ls">审核方式：人工微信视频审核</p>
+      <br>
+      <p class="ls">申请条件</p>
+      <p class="ls">1、20-60岁征信良好</p>
+      <p class="ls">2、良好的信用记与芝麻分认证</p>
+      <br>
+      <p class="ls">申请资料：</p>
+      <p class="ls">银行卡信息，身份认证，个人资料，手机认证</p>
+</div>
+
+<div style=" margin: 2% 5%;padding-top:1%;text-align: center;color:grey;border-top:1px solid #d9d9d9;width:90%;">- 请上滑以探索更多 -</div>
+</div>
+
+
+<div class="fixed_box"><div class="weui-cell form-group"><div class="weui-cell__hd">
+<label class="weui-label">手机号</label></div>
+<div class="weui-cell__bd">
+<input class="weui-input" id="phone" type="number" pattern="[0-9]*" placeholder="请输入手机号">
+</div></div>
+<div class="weui-cell form-group"><div class="weui-cell__hd">
+<label class="weui-label">验证码</label></div>
+<div class="weui-cell__bd">
+<input class="weui-input" id="code" type="number" pattern="[0-9]*" placeholder="请输入验证码"></div>
+<a href="javascript:;" class="weui-btn" id="request">获取验证码</a>
+</div>
+<div class="weui-flex btn-box"><div class="weui-flex__item">
+<input type="hidden" value="688617" id="from_user_id">
+<a href="javascript:;" class="weui-btn" id="request">立即申请</a>
+</div></div>
+<div class="weui-flex btn-box"><div class="weui-flex__item">
+<input type="hidden" value="688617" id="from_user_id">
+<a href="javascript:;" class="weui-btn" id="request">关于公司</a></div>
+<div class="weui-flex__item">
+<input type="hidden" value="688617" id="from_user_id">
+<a href="javascript:;" class="weui-btn" id="request">联系我们</a>
+</div></div>
+</div>
+
+</body>
+<script>
+    //playbackRate属性来控制video的播放速度
+    var Rate=0.83;
+    var video= document.getElementById('v');
+    video.playbackRate = 1.0;
+     $(function(){
+            $("#price").keyup(function(){
+                var price = $(this).val();
+                var need_time = $("#need_time").val();
+                if(price>50000){
+                  $("#price").val(50000);
+                  price=50000;
+                }
+                figure(price, need_time);
+            })
+            
+            $("#need_time").change(function(){
+                var price = $("#price").val();
+                var need_time = $("#need_time").val();
+                figure(price, need_time);
+            })
+     })
+     function figure(price, need_time){
+            var rate = parseFloat(Rate);
+            price = parseFloat(price);
+            need_time = parseInt(need_time);
+            if(rate>0 && price>0){
+                var total_interest = ((rate/100)*price*need_time);
+                var m_refund_price = ((price+total_interest)/need_time).toFixed(2);
+                total_interest = total_interest.toFixed(2);
+                $("#m_refund_price").text(m_refund_price);
+                $("#total_interest").text(total_interest);
+            }else{
+                $("#m_refund_price").text(0);
+                $("#total_interest").text(0);
+            }
+        }
+window.onscroll = function(){ 
+  var t = document.documentElement.scrollTop || document.body.scrollTop; 
+  var height = document.body.offsetHeight-window.screen.availHeight;
+  var DPR = window.devicePixelRatio;
+  if (t == height ) {
+    $(".fixed_box").css('display','block'); ;
+  } else {
+    $(".fixed_box").css('display','none'); ;
+  }
+}
+</script>
+</html>
