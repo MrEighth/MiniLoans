@@ -6,7 +6,7 @@ class Config(object):
     SECRET_KEY = os.urandom(24)
 
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
-    SQLALCHEMY_DATABASE_URI = 'mysql://root:root@127.0.0.1/test'  # sql链接
+    SQLALCHEMY_DATABASE_URI = 'mysql://root:root@localhost/test'  # sql链接
 
     MAIL_SERVER = 'smtp.163.com'
     MAIL_PORT = 25

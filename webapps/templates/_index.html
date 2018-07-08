@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+	<title>微贷平台</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}" />
+	<style type="text/css">
+		.footer {
+			margin-top: 20px;
+		}
+		#container {
+			min-height: 50px;
+		}
+		#user-info {
+			margin: 10px 0;
+			background: white;
+		}
+        #user-info>#credit-score>label {
+            font-size: 1.2em;
+            color: #ea920d;
+        }
+		#go-loan {
+			margin: 5px 0;
+			background: white;
+		}
+		#interest-intro {
+			height: 200px;
+			width: 100%;
+		}
+		#loan-list {
+			margin-left: 10px;
+		}
+		#loan-history {
+            margin:0 auto;
+            width: 122px;
+            display: inline-block;
+            border: none;
+            background: white;
+            color: dodgerblue;
+            text-decoration: none;
+            text-align: center;
+		}
+        #loan-history:hover {
+            width: 122px;
+            cursor: pointer;
+            filter:glow(color=dodgerblue,strength=15);
+            {#-webkit-transition-property: all;#}
+            {#-webkit-transition-duration: 0.5s;#}
+            {#-webkit-transition-timing-function: initial;#}
+            {#-webkit-transition-delay: initial;#}
+        }
+		#loan-history > .arrow-down {
+			margin-left: 5px;
+			height: 10px;
+		}
+		body {
+			background-image: url("http://pic27.photophoto.cn/20130523/0005018312643503_b.jpg");
+			background-repeat: no-repeat;
+			background-size: 200% 150%;
+			background-position: 50% 0;
+			-moz-background-size: 200% 150%;
+			font-family: "Courier New",Verdana,Arial,sans-serif;
+			margin: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="navbar">
+		<div class="navbar-header">
+            <div class="navbar-title"><img class="logo" src="https://leetcode-cn.com/static/webpack_bundles/images/LeetCode_nav.4d940ca7.png" alt="微贷"></div>
+			<div class="navbar-collapse"></div>
+			<div class="navbar-right">
+				<img class="avatar" src="https://www.gravatar.com/avatar/5ffc362c1b7127fe6dbec3a51346dbf8.png?s=200" alt="facefaces"></div>
+		</div>
+	</div>
+	<div id="container">
+		<div id="user-info" class="group-box">
+            <div id="user-name">账号: <label>{{ user_info.id }}</label></div>
+            <div id="user-nickname">用户名: <label>{{ user_info.nickname }}</label></div>
+			<div id="credit-score">信用值: <label>{{ user_info.credit_score }}</label></div>
+			<div id="loan-ceiling">最大额度: <label>{{ user_info.loan_ceiling }}</label>元</div>
+			<div id="available-for-loan">剩余额度: <label>{{ user_info.loan_rest }}</label>元</div>
+			<div id="month-repay">{{ user_info.repay_date }}前应还: <label>{{ user_info.month_repay }}</label>元</div>
+			<div class="separator"></div>
+			<div id="loan-list">
+				<a id="loan-history">查看借款记录<img class="arrow-down" src="{{ url_for('static', filename='res/104-double-arrow-copy.png') }}"></a>
+			</div>
+		</div>
+		<div id="go-loan" class="group-box">
+			<div id="interest-intro">利率介绍</div>
+			<input id="" class="button" type="button" value="立即申请">
+		</div>
+	</div>
+	<div class="footer">
+		<div class="separator"></div>
+		<div class="links">
+			<a href="javascript:">帮助</a>
+			<a href="javascript:">关于我们</a>
+			<a href="javascript:">服务条款</a>
+		</div>
+	</div>
+</body>
+</html>

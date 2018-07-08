@@ -1,0 +1,94 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+@media screen and (max-width: 720px) {
+    .navbar-header {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 720px) {
+    body {
+        padding: 0 10% 0 10%;
+    }
+    .navbar-header {
+        width: 80%;
+    }
+}
+.navbar {
+    /*background: hsla(0,0%,100%,.4);*/
+    background: #f5c153;
+    height: 50px;
+}
+.navbar-header {
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+}
+.navbar-title {
+    margin: 0 0 0 20px;
+    font-size: 1.5em;
+    display: inline;
+}
+.navbar-collapse {
+    display: inline;
+}
+.navbar-right {
+    position: absolute;
+    right: 20px;
+    display: inline;
+}
+
+.group-box {
+    border: 1px solid #D5D5D5;
+    border-radius: .3em;
+    padding: 15px 10px;
+}
+.separator {
+    height: 1px;
+    margin: 10px 2px;
+    background: #D5D5D5;
+}
+
+.footer {
+}
+.links {
+    margin: 15px 10px;
+}
+.links > a {
+    margin-left: 10px;
+    color: white;
+    text-decoration: none;
+}
+.links > a:hover {
+    text-decoration: underline;
+    color: #f5c153;
+}
+.button {
+    height: 35px;
+    width: 100%;
+    color:white;
+    font-size: 20px;
+    display: inline-block;
+    background-image: linear-gradient(#f5c153, #ea920d);
+    border-radius: .3em;
+    text-align: center;
+    text-shadow: 0 1px 1px black;
+}
+.button:active {
+    box-shadow: .05em .1em .2em rgba(0,0,0,.6) inset;
+    border-color: rgba(200,193,95,.3);
+    background: #ffc15f;
+}
+
+img.avatar {
+    height: 30px;
+}
+img.logo {
+    height: 30px;
+}
+img.arrow-down {
+    height: 10px;
+}
