@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="http://cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
-    <script type="text/javascript" src="../static/js/jquery.min.js"></script>
+    <script type="text/javascript" src={{url_for('static',filename="js/jquery.min.js")}}></script>
 
     <title>Welcome</title>
     <style type="text/css">
@@ -18,20 +18,13 @@
     }
 
     @media screen and (max-width: 720px) {
-      body {
-        text-align: center;
-      }
-      .pro_content {
-        top:10%;
-      }
       .pro_box {
-          top:18%;
+          top:10%;
           width: 100%;
           position: absolute;
           display: flex;
           overflow-y:scroll;
           flex-direction: column;
-          padding-bottom: 20%;
       }
        .mid {
         height: 10px;
@@ -61,10 +54,6 @@
           position: absolute;
           display: flex;
           overflow-y:scroll;
-      }
-      .pro_content {
-        bottom: 0;
-        align-items: flex-start;
       }
       .header-content {
         top: 8%;
@@ -105,7 +94,8 @@
       .pro_content {
         display: flex;
         flex-direction: column;
-        
+        align-items: flex-start;
+        bottom: 0;
         justify-content: space-between;
 
         padding: 0 5% 2% 2%;
@@ -221,9 +211,6 @@ input {
   border:0px;
   font-size: 20px;
 }
-.count {
-
-}
 .data .select {
   position:relative;
   padding-top:5%;
@@ -284,7 +271,7 @@ input {
 <div class="pro_bg">
        <!--autoplay用来使其自动播放，muted用来使其静音，loop为循环播放-->
        <video id="v"  playsinline autoplay muted loop>
-        <source type="video/mp4" src="https://pmdvod.nationalgeographic.com/NG_Video/682/771/OneStrangeRock_LandLoop_1264507459787_mp4_video_1280x720_1928000_7.mp4">
+        <source type="video/mp4" src="http://132.232.108.79:1994/static/vedio/OneStrangeRock.mp4">
       </video>
       <div class="pro_content">
       <a class="pro_title">人人生财</a>
@@ -300,7 +287,7 @@ input {
 <div class="pro_fg">
       <div class="title">
 
-      <image src="../static/images/icons/icon_bj2.png" mode="aspectFit"></image>
+      <image src={{url_for('static',filename="images/icon_bj2.png")}} mode="aspectFit"></image>
       <a>小额贷款说明</a>
       </div>
 
@@ -312,7 +299,7 @@ input {
 
      <div class="data">
       <a>金额（元）</a>   
-      <input class="count" type="number" pattern="[0-9]*" placeholder="请输入金额" id="price"/>
+      <input class="" type="number" pattern="[0-9]*" placeholder="请输入金额" id="price"/>
     </div>
 
     <div class="data">
@@ -345,7 +332,7 @@ input {
 <div class="doublecode">
 <a>微信扫一扫二维码</a>
 <a>关注微信公众号</a>
-<image  src="../static/images/icons/icon_bj2.png" mode="aspectFit"></image>
+<image  src={{url_for('static',filename="images/icon_bj2.png")}} mode="aspectFit"></image>
 
 </div>
 <div class="login_box">
@@ -421,16 +408,16 @@ input {
                 $("#total_interest").text(0);
             }
         }
-        
+        /*
 window.onscroll = function(){ 
   var t = document.documentElement.scrollTop || document.body.scrollTop; 
-  if (t >0 ) {
-    $(".pro_content").css('display','none'); 
-    $(".header-content").css('display','none'); 
+  var height = document.body.offsetHeight-window.screen.availHeight;
+  var DPR = window.devicePixelRatio;
+  if (t == height ) {
+    $(".fixed_box").css('display','block'); ;
   } else {
-    $(".pro_content").css('display','flex'); 
-    $(".header-content").css('display','flex'); 
+    $(".fixed_box").css('display','none'); ;
   }
-}
+}*/
 </script>
 </html>
