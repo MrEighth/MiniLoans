@@ -11,20 +11,36 @@
 			margin-top: 20px;
 		}
 		#container {
-			min-height: 50px;
+			width: 80%;
+            margin: auto;
 		}
-		#user-info {
-			margin: 10px 0;
-			background: white;
-		}
-        #user-info>#credit-score>label {
+        #user-info {
+            margin: 10px 0 10px;
+        }
+        #user-info > #credit-score > label {
             font-size: 1.2em;
             color: #ea920d;
         }
-		#go-loan {
-			margin: 5px 0;
-			background: white;
-		}
+        #go-loan {
+            margin: 10px 0 10px;
+        }
+        @media screen and (min-width: 720px) {
+            #user-info {
+                display: inline-block;
+                padding: 15px;
+                width: 300px;
+                float: right;
+            }
+            #go-loan {
+                display: inline-block;
+                width: 100%;
+                margin-right: 320px;
+                float: left;
+            }
+        }
+        @media screen and (max-width: 720px) {
+
+        }
 		#interest-intro {
 			height: 200px;
 			width: 100%;
@@ -34,33 +50,50 @@
 		}
 		#loan-history {
             margin:0 auto;
-            width: 122px;
+            width: 150px;
+            font-size: 1.1em;
             display: inline-block;
             border: none;
-            background: white;
             color: dodgerblue;
             text-decoration: none;
             text-align: center;
+            filter:glow(color=dodgerblue,strength=15);
+            animation: Glow .5s linear infinite alternate;
 		}
         #loan-history:hover {
-            width: 122px;
             cursor: pointer;
-            filter:glow(color=dodgerblue,strength=15);
-            {#-webkit-transition-property: all;#}
-            {#-webkit-transition-duration: 0.5s;#}
-            {#-webkit-transition-timing-function: initial;#}
-            {#-webkit-transition-delay: initial;#}
+        }
+        @keyframes Glow {
+            from {
+                text-shadow: 0 0 .01em #fff,
+                0 0 .05em #fff,
+                0 0 .1em #fff,
+                0 0 .2em #ffc553,
+                0 0 .4em #ffc553,
+                0 0 .8em #ffc553;
+            }
+            to {
+                text-shadow: 0 0 .05em #fff,
+                0 0 .1em #fff,
+                0 0 .4em #fff,
+                0 0 .8em #ffc553,
+                0 0 1.2em #ffc553,
+                0 0 1.5em #ffc553;
+            }
         }
 		#loan-history > .arrow-down {
 			margin-left: 5px;
 			height: 10px;
 		}
+        #btn-loan {
+            background: #ffc553;
+            border-radius: 5px;
+        }
 		body {
 			background-image: url("http://pic27.photophoto.cn/20130523/0005018312643503_b.jpg");
 			background-repeat: no-repeat;
 			background-size: 200% 150%;
 			background-position: 50% 0;
-			-moz-background-size: 200% 150%;
 			font-family: "Courier New",Verdana,Arial,sans-serif;
 			margin: 0;
 		}
@@ -90,7 +123,7 @@
 		</div>
 		<div id="go-loan" class="group-box">
 			<div id="interest-intro">利率介绍</div>
-			<input id="" class="button" type="button" value="立即申请">
+			<input id="btn-loan" class="button" type="button" value="立即申请">
 		</div>
 	</div>
 	<div class="footer">

@@ -1,10 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>微贷平台</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        a {
+            color: #36d;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        img {
+            height: 100%;
+        }
+        .header {
+            height: 52px;
+            background: hsla(0,0%,0%,.5);
+        }
+        .header-center {
+            height: 32px;
+            width: 94%;
+            position: absolute;
+            top: 10px;
+            left: 3%;
+            margin: auto;
+        }
+        .footer {
+            margin: 20px auto;
+            padding: 20px 0;
+            border-top: 1px solid #ddd;
+            width: 95%;
+        }
+        .list-style-none {
+            list-style: none;
+        }
+        .flex-wrap {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .m-r-3 {
+            margin-right: 16px;
+        }
+        .bg {
+            position: absolute;
+            width: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .bg-video {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            transform: scale(1.2);
+        }
+        #logo {
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
-
+<div class="bg">
+    <video class="bg-video" muted loop autoplay>
+        <source src="https://cdn.steamstatic.com.8686c.com/steam/apps/256673169/movie_max.webm?t=1477332671" type="video/webm">
+        <source src="https://cdn.steamstatic.com.8686c.com/steam/apps/256673169/movie480.mp4?t=1477332671" type="video/mp4">
+    </video>
+</div>
+<div class="header">
+    <div class="header-center">
+        <div id="logo">
+            <img src="https://leetcode-cn.com/static/webpack_bundles/images/LeetCode_nav.4d940ca7.png" alt="微贷">
+        </div>
+    </div>
+</div>
+<div class="content"></div>
+<div class="footer">
+    <ul class="list-style-none flex-wrap">
+        <li class="m-r-3"><a href="javascript:">帮助</a></li>
+        <li class="m-r-3"><a href="javascript:">关于我们</a></li>
+        <li class="m-r-3"><a href="javascript:">服务条款</a></li>
+    </ul>
+</div>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    $(function () {
+        $(window).resize(function() {
+            $(".bg").height($(window).height());
+        }).trigger("resize");
+    });
+</script>
 </body>
 </html>

@@ -14,4 +14,4 @@ def index():
         'repay_date': '7月10日',
         'month_repay': '1024'
     }
-    return render_template('_index.html', title='微贷平台', user_info=user_info)
+    return render_template('index.html', title='微贷平台', user_info=user_info)

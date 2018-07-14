@@ -42,14 +42,16 @@
 }
 
 .group-box {
-    border: 1px solid #D5D5D5;
+    border: 1px solid #d5d5d5;
     border-radius: .3em;
     padding: 15px 10px;
+    background: white;
+    background: rgba(255, 255, 255, .5);
 }
 .separator {
     height: 1px;
     margin: 10px 2px;
-    background: #D5D5D5;
+    background: #d5d5d5;
 }
 
 .footer {
@@ -69,19 +71,30 @@
 .button {
     height: 35px;
     width: 100%;
-    color:white;
+    /*color: white;*/
     font-size: 20px;
-    display: inline-block;
-    background-image: linear-gradient(#f5c153, #ea920d);
-    border-radius: .3em;
-    text-align: center;
-    text-shadow: 0 1px 1px black;
+    /*display: inline-block;*/
+    /*border-radius: .3em;*/
+    /*text-align: center;*/
+    /*text-shadow: 0 3px 3px #f5c153;*/
+    /*background-image: linear-gradient(#f5c153, #ea920d);*/
+    /*background: -webkit-linear-gradient(red,yellow,blue, green); !* Safari 5.1-6.0 *!*/
+    /*background: -o-linear-gradient(red,yellow,blue, green); !* Opera 11.1-12.0 *!*/
+    /*background: -moz-linear-gradient(red,yellow,blue, green); !* Firefox 3.6-15 *!*/
+    /*background: linear-gradient(red,yellow,blue, green); !* 标准语法 *!*/
+    /*-webkit-transition-property: all;*/
+    /*transition-property: all;*/
+    /*-webkit-transition-duration: .15s;*/
+    /*transition-duration: .15s;*/
+    /*-webkit-box-shadow: 0 2px 0 #bbbbbb, 0 3px 3px rgba(0, 0, 0, 0.2);*/
+    /*box-shadow: 0 2px 0 #bbbbbb, 0 3px 3px rgba(0, 0, 0, 0.2);*/
+    /*background: rgba(245, 193, 84, 1);*/
 }
-.button:active {
-    box-shadow: .05em .1em .2em rgba(0,0,0,.6) inset;
-    border-color: rgba(200,193,95,.3);
-    background: #ffc15f;
-}
+/*.button:active {*/
+    /*box-shadow: .05em .1em .2em rgba(0,0,0,.6) inset;*/
+    /*background: rgba(245, 215, 107, .5);*/
+    /*background: #ffc15f;*/
+/*}*/
 
 img.avatar {
     height: 30px;
