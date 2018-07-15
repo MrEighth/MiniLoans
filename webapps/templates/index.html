@@ -13,6 +13,7 @@
         }
         a {
             color: #36d;
+            cursor: pointer;
             text-decoration: none;
         }
         a:hover {
@@ -21,17 +22,35 @@
         img {
             height: 100%;
         }
+        .avatar {
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .caret-down-2 {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border: 6px solid;
+            border-color: white transparent transparent;
+        }
+        .caret-down-2:active {
+            border-color: transparent transparent white;
+        }
         .header {
             height: 52px;
-            background: hsla(0,0%,0%,.5);
+            background-color: hsla(0,0%,100%,.4);
+            border-bottom: 1px solid #f5c153;
         }
         .header-center {
-            height: 32px;
-            width: 94%;
-            position: absolute;
-            top: 10px;
-            left: 3%;
+            height: 61.8%;
+            width: 95%;
+            position: relative;
+            top: 19.1%;
             margin: auto;
+        }
+        .content {
+            width: 95%;
+            margin: 20px auto 0;
         }
         .footer {
             margin: 20px auto;
@@ -49,8 +68,11 @@
         .m-r-3 {
             margin-right: 16px;
         }
+        .m-b-2 {
+            margin-bottom: 8px;
+        }
         .bg {
-            position: absolute;
+            position: fixed;
             width: 100%;
             overflow: hidden;
             z-index: -1;
@@ -61,8 +83,80 @@
             object-fit: cover;
             transform: scale(1.2);
         }
+        .group-box {
+            background-color: hsla(40, 64%, 95%, .6);
+            border: 1px solid #f5c153;
+            border-radius: 3px;
+            padding: 10px;
+        }
+
+        @keyframes Shine {
+            from {
+                text-shadow: .01em .01em .01em #fff,
+                .01em -.01em .01em #fff,
+                -.01em .01em .01em #fff,
+                -.01em -.01em .01em #fff;
+            }
+            to {
+                text-shadow: .05em .05em .01em #fff,
+                .05em -.05em .05em #fff,
+                -.05em .05em .05em #fff,
+                -.05em -.05em .05em #fff;
+            }
+        }
+        .button-3 {
+            user-select: none;
+            font-size: 20px;
+            font-weight: bold;
+            color: #f5c153;
+            background-color: hsla(40, 64%, 54%, .3);
+            text-shadow: .02em .02em .05em #233;
+            box-shadow: .05em .05em .05em #233;
+            padding: 5px 10px;
+            border: 1px solid #f5c153;
+            border-radius: 3px;
+            transition: color,background-color 500ms ease-out;
+        }
+        .button-3:hover {
+            color: #fff;
+            background-color: #f5c153;
+            text-decoration: none;
+            animation: Shine 800ms ease-in-out infinite alternate;
+        }
+        .button-3:active {
+            box-shadow: .01em .01em .01em;
+        }
         #logo {
+            display: inline-block;
             height: 100%;
+        }
+        #user {
+            height: 100%;
+            float: right;
+        }
+        #user-info {
+            display: inline-block;
+            flex-grow: 1;
+            margin-right: 10px;
+        }
+        #loan-full {
+            display: inline-block;
+            flex-grow: 2;
+        }
+        @media screen and (max-width: 680px){
+            .button-3 {
+                color: #fff;
+                background: #f5c153;
+                text-decoration: none;
+                animation: Shine 500ms linear infinite alternate;
+            }
+            .content {
+                flex-direction: column;
+            }
+            #user-info {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
         }
     </style>
 </head>
@@ -76,11 +170,30 @@
 <div class="header">
     <div class="header-center">
         <div id="logo">
-            <img src="https://leetcode-cn.com/static/webpack_bundles/images/LeetCode_nav.4d940ca7.png" alt="微贷">
+            <img alt="微贷" src="https://leetcode-cn.com/static/webpack_bundles/images/LeetCode_nav.4d940ca7.png">
+        </div>
+        <div id="user">
+            <img class="avatar" alt="facefaces" src="https://avatars1.githubusercontent.com/u/8780957?s=40&v=4">
+            <span class="caret-down-2 m-b-2"></span>
         </div>
     </div>
 </div>
-<div class="content"></div>
+<div class="content flex-wrap">
+    <div class="group-box" id="user-info">
+        <ul class="list-style-none">
+            <li id="user-name">账号: <label>{{ user_info.id }}</label></li>
+            <li id="user-nickname">用户名: <label>{{ user_info.nickname }}</label></li>
+            <li id="credit-score">信用值: <label>{{ user_info.credit_score }}</label></li>
+            <li id="loan-ceiling">最大额度: <label>{{ user_info.loan_ceiling }}</label>元</li>
+            <li id="available-for-loan">剩余额度: <label>{{ user_info.loan_rest }}</label>元</li>
+            <li id="month-repay">{{ user_info.repay_date }}前应还: <label>{{ user_info.month_repay }}</label>元</li>
+        </ul>
+        <a>查看借款记录</a>
+    </div>
+    <div class="group-box" id="loan-full">
+        <a class="button-3">立即申请</a>
+    </div>
+</div>
 <div class="footer">
     <ul class="list-style-none flex-wrap">
         <li class="m-r-3"><a href="javascript:">帮助</a></li>
