@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>How</title>
+    <style>
+    html, body {
+        align-items: center;
+    }
+    @media screen and (max-width: 980px) {
+        .ngContent {
+            display: flex;
+            flex-direction: column;
+        }
+        img {
+        margin: 0;
+        width: 100%;
+        height: auto;
+    }
+    }
+    @media screen and (min-width: 980px) {
+        .ngContent {
+            display: flex;
+        }
+         img {
+            margin: 0;
+            height: auto;
+            max-width: 100%;
+        }
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        margin: 0 auto;
+        left:0;
+        right: 0;
+    }
+    .ngContent {
+        position: relative;
+        border-radius: 1rem;
+        background-color: red;
+        float: left;
+        box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);
+        margin-bottom: 1.5rem;
+        margin-right: 1.69491525%;
+        margin-left: 1.69491525%;
+        overflow: hidden;
+        box-sizing: inherit;
+    }
+     
+    .content {
+        padding: 1.5rem;
+        line-height: 1;
+
+    }
+    img {
+        border-radius: 1rem;
+        object-fit: cover;
+    }
+    h1 {
+        font-size: 3em;
+        text-align: center;
+    }
+    </style>
+    
+
+</head>
+<body>
+<h1>攻略</h1>
+<div class="box">
+<div class="ngContent">
+<img src="../static/images/background/002.jpeg" mode="aspectFit"></img>
+<div class="content">
+<h6>攻略一</h6>
+<h3>芝麻信用分</h3>
+<p class="up">详细介绍芝麻分与申请关系</p>
+<p class="down">简介芝麻分与申请关系</p>
+</div></div>
+<div class="ngContent">
+<img src="../static/images/background/002.jpeg" mode="aspectFit"></img>
+<div class="content">
+<h6>攻略二</h6>
+<h3>芝麻信用分</h3>
+<p class="up">详细介绍芝麻分与申请关系</p>
+<p class="down">简介芝麻分与申请关系</p>
+</div>
+</div>
+<div>
+</body>
+</html>

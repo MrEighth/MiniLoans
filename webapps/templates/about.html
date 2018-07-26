@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About us</title>
+    <link rel="shortcut icon" href=" /static/images/icons/favicon.ico" /> 
+    <style>
+    html, body {
+        margin: 0;padding: 0;
+        width: 100%;height: 100%;
+        color: #000;background:#fff;
+        text-align: center;
+    }
+    h1 {
+        font-size: 8.4em;
+        font-family: FFDINWebProLight,arial,helvetica;
+        letter-spacing: 2px;
+        color: white;
+        padding: 0;
+        z-index: 99;
+        position: absolute;
+        left: -690px;
+        top:-120px;
+        text-shadow: -1px 3px 20px grey;
+    }
+    #headerTop {
+        width: 0;
+        height: 0;
+        border-top: 250px solid white;
+        border-left: 900px solid white;
+        border-bottom: 600px solid transparent;
+        position: fixed;
+        top:0;
+        display: block;
+        z-index: 88;
+        text-align: center;
+        color: #000;
+        padding: 0;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+    }
+    #content {
+        top:500px;
+        position: relative;
+        margin: auto;
+        text-align: right;
+        padding-right: 100px;
+        width: 800px;
+    }
+    h2 {
+        font-size: 4.4em;
+        font-family: FFDINWebProLight,arial,helvetica;
+    }
+    .slopingside{
+        height: 0;
+        /*border: 1px solid black;*/
+        width: 1000px;
+        position: absolute;
+        left: -960px;
+        top:300px;
+        transform: rotate(125deg);
+    }
+    .notice{
+        width: 50%;
+        min-width: 820px;
+        height: 100px;
+        position: fixed;
+        z-index: 999;
+        margin: auto;
+        left:0;
+        right: 0;
+        overflow: hidden;
+    }
+    .note {
+        font-size: 3.4em;
+        font-family: FFDINWebProLight,arial,helvetica;
+        left: 100%;
+        position: absolute;
+        color: black;
+        animation: multinotice 7s infinite linear;
+    }
+    @keyframes multinotice {
+        0% {left:100%;}
+        100% {left: -120%;}
+    }
+    </style>
+
+</head>
+<body>
+<div id="box">
+    <div class="notice">
+        <nobr><a class="note">LET US START YOU A NEW LIFE !</a></nobr>
+    </div>
+    <div id="headerTop">
+        <h1>ABOUT<br>US</h1>
+        <div class="slopingside"></div>
+    </div>
+    <div id="content">
+        <h2>Addr</h2>
+        <h2>XXXXXXXXXXXX</h2>
+        <h2>XXXXXXXXXXXXXXXX</h2>
+        <h2>Manager</h2>
+        <h2>XXX</h2>
+        <h2>XXX</h2>
+        <h2>XXX</h2>
+        <h2>Policy</h2>
+        <h2>注册日期</h2>
+        <h2>XXXX-XX-XX</h2>
+        <h2>公司主体注册编号</h2>
+        <h2>XXXXXXXXXXXXXX</h2>
+    </div>
+</div>
+</body>
+</html>

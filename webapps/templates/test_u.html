@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="http://cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+
     <script type="text/javascript" src={{url_for('static',filename="js/jquery.min.js")}}></script>
 
     <title>Welcome</title>
@@ -17,63 +18,60 @@
       overflow-y: scroll;
     }
 
-    @media screen and (max-width: 720px) {
+    @media screen and (max-width: 980px) {
+      body {text-align: center;}
+      .pro_content {top:10%;}
       .pro_box {
-          top:10%;
+          top:18%;
           width: 100%;
           position: absolute;
           display: flex;
           overflow-y:scroll;
           flex-direction: column;
+          padding-bottom: 20%;
       }
-       .mid {
-        height: 10px;
-      }
+       .mid {height: 10px;}
       .title img {
-            margin-top: 2%;
-            margin-left: 10%;
+
+            margin-left: auto;
             width: 58px;
             height: 58px;
           }
-      .header-content {
-        top: 3%;
-      }
-      .pro_fg {
-        margin: 5%;
-      }
-      .fixed_box {
-        margin: 5%;
-      }
+      .header-content { top: 3%;}
+      .pro_fg { margin: 5%; }
+      .fixed_box { margin: 5%;  }
     }
 
-    @media screen and (min-width: 720px) {
+    @media screen and (min-width: 980px) {
       .pro_box {
           top:20%;
           width: 70%;
           left: 15%;
           position: absolute;
           display: flex;
-          overflow-y:scroll;
       }
-      .header-content {
-        top: 8%;
+      .pro_content {
+        bottom: 0;
+        align-items: flex-start;
       }
-            .mid {
-        width: 2%;
-      }
+      .header-content {   top: 8%;      }
+        .mid {        width: 2%;      }
       .title img {
-            margin-top: 2%;
+
             margin-left: auto;
-            padding-left: 2%;
+
             width: 58px;
             height: 58px;
           }
-          .pro_fg {
-        margin: 0;
-      }
-      .fixed_box {
-        margin: 0;
-      }
+          .pro_fg {  margin: 0;  }
+      .fixed_box { margin: 0; }
+    }
+
+    @media (max-aspect-ratio:16/9) {
+        video {   height: 100%;  }
+    }
+    @media (min-aspect-ratio:16/9) {
+        video {   width: 100%;   }
     }
 
     .pro_bg{
@@ -84,20 +82,14 @@
     video {
           position: relative;
           margin-top: 0;
-          height: 100%;
+          
           z-index: 1;
-          /*灰色调*/
-          /*-webkit-filter:grayscale(100%)*/
-
           object-fit: cover;
       }
       .pro_content {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        bottom: 0;
         justify-content: space-between;
-
         padding: 0 5% 2% 2%;
         position: absolute;
         width: 100%;
@@ -107,10 +99,9 @@
         font-weight: bold;
       }
 
-
       .pro_fg {
           flex:5;
-          background: rgba(255,255,255,0.5);
+          background: rgba(255,255,255,0.7);
           position: relative;
           align-items: center;
           text-align: center;
@@ -136,9 +127,6 @@
             vertical-align: top;
           }
 
-          .header-content .tab {
-          }
-
           .title {
             position: relative;
             z-index: 99;
@@ -146,77 +134,67 @@
             display: flex;
             flex-direction: row;
             align-items: center;
-            height: 10%;
+            height: 10%;            
+            padding-bottom: 1%;
+            padding-top: 1%;
+
           }
            .title a{
             color: black;
             z-index: 99;
             font-size: 150%;
             font-weight: bold;
-            margin-top: 2%;
-            margin-left: 10%;
+            margin: auto;
             display: flex;
           }
-          
+
           .money-box {
-            position:relative;
+
             width: 90%;
             overflow: hidden;
             text-align: center;
-            margin-left: 5%;
             border-top: 1px solid #d9d9d9;
-            margin-top: 2%;
-            height: 10%;
             display: flex;
-            bottom: 1%
+            margin: auto;
+
           }
 
-.money-box div {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  text-align: center;
-  font-size: 110%;
-  color: black;
-  font-weight: bold;
-}
-.data {
-  width:90%;
-  border-top: 1px solid #d9d9d9;
-  margin-top: 1%;
-  margin-left: 5%;
-  padding-top: 2%;
-  padding-left: 5%;
-  font-size: 22px;
-  display: flex;
-}
+        .money-box div {
+          display: flex;
+          flex-direction: column;
+          width: 50%;
+          text-align: center;
+          font-size: 22px;
+          color: black;
 
-.data a {
+        }
+        .data {
+          width:90%;
+          border-top: 1px solid #d9d9d9;
+          margin-top: 1%;
+          margin-left: 5%;
+          padding-top: 2%;
+          padding-left: 5%;
+          font-size: 20px;
+          display: flex;
+        }
+        .data .count{
+            width: 50%;
+        }
 
-}
 select {
   background-color: transparent;
   border:0px;
   font-size: 20px;
+  width: 50%;
 }
 
-.data .money {
-  position: relative;
-  margin: 2% 0 0 10%;
-  left: 5%;
-  font-size:100%;
-}
 input {
   background-color: transparent;
   border:0px;
   font-size: 20px;
 }
-.data .select {
-  position:relative;
-  padding-top:5%;
-  padding-right:10%;
-  color: #888;
-}
+
 .ts {
   margin: 1% 5%;
   padding-top: 2%;
@@ -234,16 +212,13 @@ input {
   white-space:pre-wrap;
 }
 
-.req {
-  width:100%;
-}
-
 .fixed_box {
     flex:5;
     position: relative;
-    background: rgba(255,255,255,.5);
+    background: rgba(255,255,255,.7);
     border-radius: 10px;
     z-index: 100;
+
 }
 .weui-btn {
   background-color: rgba(100,100,100,.5);
@@ -252,19 +227,33 @@ input {
   padding-top: 5%;
    text-align: center;
    display: flex;
-   flex-direction: column;
-}
-.doublecode  img{
-  padding-top: 10%;
-  padding-bottom: 10%;
-  width: 100%;
-  margin: auto;
-}
-.login_box {
-  bottom: 0;
-  margin-bottom: 0;
+flex-direction: column;
 }
 
+.doublecode .dc_box {
+    display: flex;
+    margin: auto;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+.doublecode .dc {
+    display: flex;
+    flex-direction: column;
+}
+.weui-label {
+    width: 65px;
+}
+.dc img{
+  padding-top: 5%;
+  padding-bottom: 5%;
+  width: 45%;
+  margin: auto;
+}
+
+.login_box {
+  bottom: 0;
+  margin: auto;
+}
     </style>
 </head>
 <body>
@@ -287,7 +276,7 @@ input {
 <div class="pro_fg">
       <div class="title">
 
-      <image src={{url_for('static',filename="images/icon_bj2.png")}} mode="aspectFit"></image>
+      <image src="/static/images/icon_bj2.png" mode="aspectFit"></image>
       <a>小额贷款说明</a>
       </div>
 
@@ -299,7 +288,7 @@ input {
 
      <div class="data">
       <a>金额（元）</a>   
-      <input class="" type="number" pattern="[0-9]*" placeholder="请输入金额" id="price"/>
+      <input class="count" type="number" pattern="[0-9]*" placeholder="请输入金额" id="price"/>
     </div>
 
     <div class="data">
@@ -331,9 +320,16 @@ input {
 <div class="fixed_box">
 <div class="doublecode">
 <a>微信扫一扫二维码</a>
+<div class="dc_box">
+<div class="dc">
 <a>关注微信公众号</a>
-<image  src={{url_for('static',filename="images/icon_bj2.png")}} mode="aspectFit"></image>
-
+<image  src="/static/images/dc.png" mode="aspectFit"></image>
+</div>
+<div class="dc">
+<a>联系客服微信号</a>
+<image  src="/static/images/dc.png" mode="aspectFit"></image>
+</div>
+</div>
 </div>
 <div class="login_box">
 <div class="weui-cell form-group"><div class="weui-cell__hd">
@@ -408,16 +404,16 @@ input {
                 $("#total_interest").text(0);
             }
         }
-        /*
+        
 window.onscroll = function(){ 
   var t = document.documentElement.scrollTop || document.body.scrollTop; 
-  var height = document.body.offsetHeight-window.screen.availHeight;
-  var DPR = window.devicePixelRatio;
-  if (t == height ) {
-    $(".fixed_box").css('display','block'); ;
+  if (t >0 ) {
+    $(".pro_content").css('display','none'); 
+    $(".header-content").css('display','none'); 
   } else {
-    $(".fixed_box").css('display','none'); ;
+    $(".pro_content").css('display','flex'); 
+    $(".header-content").css('display','flex'); 
   }
-}*/
+}
 </script>
 </html>
