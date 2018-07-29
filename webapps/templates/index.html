@@ -50,11 +50,12 @@
         }
         .header {
             height: 48px;
-            background-color: hsla(0,0%,100%,.4);
+            background-color: hsla(0,0%,0%,.4);
             border-bottom: 1px solid #f5c153;
         }
         .header-center {
             height: 61.8%;
+            line-height: 61.8%;
             width: 95%;
             position: relative;
             top: 19.1%;
@@ -76,6 +77,9 @@
         .flex-wrap {
             display: flex;
             flex-wrap: wrap;
+        }
+        .m-l-3 {
+            margin-left: 16px;
         }
         .m-r-3 {
             margin-right: 16px;
@@ -144,19 +148,24 @@
             right: 0;
             font-size: .8em;
             padding: 5px 10px;
-            margin: 2px 0;
+            margin: 10px 0;
             background-color: #fff;
             border-radius: 4px;
-
             text-align: center;
         }
-        #logo {
+        #brand {
             display: inline-block;
             height: 100%;
+        }
+        .navbar {
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
         }
         #user {
             height: 100%;
             float: right;
+            cursor: pointer;
         }
         #user-info {
             display: inline-block;
@@ -167,12 +176,25 @@
             display: inline-block;
             flex-grow: 2;
         }
-        @media screen and (max-width: 680px){
+        .navbar {
+            display: block;
+            position: absolute;
+            background: #ddd;
+        }
+        .navbar-ul {
+            flex-direction: column;
+        }
+        @media screen and (max-width: 720px){
             .button-3 {
                 color: #fff;
                 background: #f5c153;
                 text-decoration: none;
                 animation: Shine 500ms linear infinite alternate;
+            }
+            #brand {
+                position: relative;
+                left: 50%;
+                transform: translate(-50%, 0);
             }
             .content {
                 flex-direction: column;
@@ -185,16 +207,22 @@
     </style>
 </head>
 <body>
-<div class="bg">
-    <video class="bg-video" muted loop autoplay>
-        <source src="https://cdn.steamstatic.com.8686c.com/steam/apps/256673169/movie_max.webm?t=1477332671" type="video/webm">
-        <source src="https://cdn.steamstatic.com.8686c.com/steam/apps/256673169/movie480.mp4?t=1477332671" type="video/mp4">
-    </video>
-</div>
+{#<div class="bg">#}
+{#    <video class="bg-video" muted loop autoplay>#}
+{#        <source src="https://cdn.steamstatic.com.8686c.com/steam/apps/256673169/movie_max.webm?t=1477332671" type="video/webm">#}
+{#        <source src="https://cdn.steamstatic.com.8686c.com/steam/apps/256673169/movie480.mp4?t=1477332671" type="video/mp4">#}
+{#    </video>#}
+{#</div>#}
 <div class="header">
     <div class="header-center">
-        <div id="logo">
+        <div id="brand">
             <img alt="微贷" src="https://leetcode-cn.com/static/webpack_bundles/images/LeetCode_nav.4d940ca7.png">
+        </div>
+        <div class="navbar">
+            <ul class="navbar-ul list-style-none flex-wrap">
+                <li class="m-l-3"><a class="about">关于我们</a></li>
+                <li class="m-l-3"><a class="guide">贷款攻略</a></li>
+            </ul>
         </div>
         <div id="user">
             <img class="avatar" alt="facefaces" src="https://avatars1.githubusercontent.com/u/8780957?s=40&v=4">
@@ -238,7 +266,7 @@
         $(document).on("click", ".dropdown-menu", function(ev) {
             return false;
         }).on("click", "#user", function () {
-            $(this).children(".dropdown-menu").toggle();
+            $(this).children(".dropdown-menu").slideToggle("fast");
             $(this).children(".caret-down-2").toggleClass("caret-up-2");
             return false;
         }).on("click", function () {
